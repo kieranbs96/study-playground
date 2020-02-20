@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Main from '../components/Main';
 
-
-function Home() {
-  return <Main pathName={`/`} />;
+function Docs() {
+  return <Main pathName={`/docs`} />;
 }
 
-export default Home;
+export default Docs;
