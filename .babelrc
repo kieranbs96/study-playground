@@ -1,8 +1,17 @@
 {
   "presets": [
+    "next/babel",
     "@babel/preset-react"
   ],
   "plugins": [
     "@babel/plugin-transform-runtime"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["next/babel", { "preset-env": { "targets": { "node": "current" } } }]
+      ],
+      "plugins": ["dynamic-import-node"]
+    }
+  }
 }

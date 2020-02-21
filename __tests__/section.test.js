@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../components/Section';
+import Intro from '../components/Intro';
 import { shallow } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
@@ -10,9 +10,9 @@ const sectionData = {
     type: 'gallery-section'
 };
 
-describe('<Section/>', () => {
+describe('<Intro/>', () => {
   it('renders the title and description properly', () => {
-    const wrapper = shallow(<Section sectionData={sectionData} />);
+    const wrapper = shallow(<Intro sectionData={sectionData} />);
     const Title = wrapper.find('h3');
     const Description = wrapper.find('p');
 
@@ -21,15 +21,13 @@ describe('<Section/>', () => {
   });
 
   it('renders the image properly', () => {
-    const wrapper = shallow(<Section sectionData={sectionData} />);
+    const wrapper = shallow(<Intro sectionData={sectionData} />);
     const Image = wrapper.find('img');
     expect(Image.props().src).toBe(sectionData.image);
   })
 
   it('matches the snapshot', () => {
-    const wrapper = shallow(<Section sectionData={sectionData} />);
+    const wrapper = shallow(<Intro sectionData={sectionData} />);
     expect(toJSON(wrapper)).toMatchSnapshot();
-    // const price = '£50.35';
-    // expect(price).toMatchSnapshot();
   })
 });
