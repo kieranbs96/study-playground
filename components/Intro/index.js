@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Block } from './style';
 
-class Section extends Component {
+class Intro extends Component {
   render() {
     const {
       sectionData: { title, type, description, image },
@@ -19,4 +19,4 @@ class Section extends Component {
   }
 }
 
-export default Section;
+export default Intro;

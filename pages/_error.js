@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../components/Page';
+import Layout from '../components/Layout';
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
@@ -10,8 +10,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const ErrorPage = styled.div``;
-
-const FourOhFour = styled.div``;
 
 function Error({ statusCode }) {
   return (

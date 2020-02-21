@@ -5,7 +5,7 @@ import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 import 'cross-fetch/polyfill';
 
-import Page from '../components/Page';
+import Layout from '../components/Layout';
 
 const config = {
   uri: 'http://localhost:4000/',
@@ -14,14 +14,14 @@ const config = {
 const client = new ApolloClient({ ...config });
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx, router }) {
     let pageProps = {};
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
-    // this exposes the query to the user
-    pageProps.query = ctx.query;
-    return { pageProps };
+    return {
+      pageProps,
+    };
   }
 
   render() {
@@ -29,9 +29,9 @@ class MyApp extends App {
 
     return (
       <ApolloProvider client={client}>
-        <Page pathName={router.pathname}>
+        <Layout pathName={router.pathname}>
           <Component pathName={router.pathname} {...pageProps} />
-        </Page>
+        </Layout>
       </ApolloProvider>
     );
   }

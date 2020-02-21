@@ -1,22 +1,34 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type Section {
+  type Intro {
     title: String,
     description: String,
     image: String
     type: String
   }
 
+  type Footer {
+    title: String
+    logo: String
+  }
+
+  type Pages {
+    home: Page
+    docs: Page
+    blog: Page
+  }
+
   type Page {
     title: String
     slug: String
     background: String
-    intro: [Section]
+    intro: Intro
   }
 
   type Query {
-    pages: [Page]
+    pages: Pages
+    footer: Footer
   }
 `;
 

@@ -2,9 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.nav`
-  max-width: 96rem;
-  margin: 0 auto;
-  background: white;
   padding: .5rem 1.6rem;
 
   display: flex;
@@ -45,4 +42,8 @@ export const MenuItem = styled.li`
 
 export const Active = styled.li`
   font-weight: bold;
+`;
+
+export const Heading = styled.h2`
+  color: ${props => props.color}
 `;
