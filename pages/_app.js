@@ -7,8 +7,10 @@ import 'cross-fetch/polyfill';
 
 import Layout from '../components/Layout';
 
+import { endpoint, prodEndpoint } from '../config';
+
 const config = {
-  uri: 'http://localhost:4000/',
+  uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
 };
 
 const client = new ApolloClient({ ...config });
